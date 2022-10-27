@@ -5,38 +5,31 @@ class Cliente {
 class ContaCorrente {
     agencia;
     //atributo privado "#nameExample";
-    _saldo = 0;
+#saldo = 0;
 
+    //Métodos (funções)
     sacar(valor){
-        if (this._saldo >= valor) {
-            this._saldo -= valor;
+        if (this.#saldo >= valor) {
+            this.#saldo -= valor;
          }
     }
 
     depositar(valor){
-        if(this._saldo > 0) {
-            this._saldo += valor;
+        if(valor > 0) {
+            this.#saldo += valor;
+            console.log(this.#saldo)
         } 
-        console.log(_saldo)
     }
 }
 
 const cliente1 = new Cliente();
-const cliente2 = new Cliente();
 
 cliente1.nome = 'Ricardo';
 cliente1.cpf = 11122233309;
 
-cliente2.nome = 'Alice';
-cliente2.cpf = 88822233309;
 
 const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.saldo = 1000;
+
 contaCorrenteRicardo.agencia = 1001;
-
-contaCorrenteRicardo.depositar = 100;
-contaCorrenteRicardo.depositar = 100;
-contaCorrenteRicardo.depositar = 100;
-contaCorrenteRicardo.sacar(50)
-
+contaCorrenteRicardo.depositar(1000);
 console.log(contaCorrenteRicardo);
