@@ -17,3 +17,4 @@ const valorSacado = contaCorrenteRicardo.sacar(500);
 console.log(valorSacado);
 console.log(contaCorrenteRicardo);
 console.log(contaCorrenteRute);
+console.log(ContaCorrente.numeroDeContas);
