@@ -1,5 +1,7 @@
 export class ContaCorrente {
     agencia;
+    cliente;
+
     //atributo privado "#nameExample";
     #saldo = 0;
 
@@ -18,5 +20,10 @@ export class ContaCorrente {
         }
         this.#saldo += valor;
         console.log(this.#saldo)
+    }
+
+    transferir(valor, conta) {
+        const valorSacado = this.sacar(valor);
+        conta.depositar(valorSacado);
     }
 }
