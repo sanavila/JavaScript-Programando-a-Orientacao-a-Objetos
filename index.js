@@ -1,26 +1,6 @@
-class Cliente {
-    nome;
-    cpf;
-}
-class ContaCorrente {
-    agencia;
-    //atributo privado "#nameExample";
-#saldo = 0;
-
-    //Métodos (funções)
-    sacar(valor){
-        if (this.#saldo >= valor) {
-            this.#saldo -= valor;
-            return valor;
-         }
-    }
-
-    depositar(valor){
-        if(valor <= 0) return;
-            this.#saldo += valor;
-            console.log(this.#saldo)
-    }
-}
+//para realizar a importação foi necessário inicializar um pacote com "node init" e uma configuração no "type" do mesmo para = "module";
+import { Cliente } from './Cliente.js';
+import { ContaCorrente } from './ContaCorrente.js';
 
 const cliente1 = new Cliente();
 
