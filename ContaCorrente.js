@@ -2,23 +2,29 @@ import { Cliente } from './Cliente.js'
 export class ContaCorrente {
     agencia;
     _cliente;
-
+    //atributo privado "#nameExample";
+    #saldo = 0;
+ 
     set cliente(novoValor){
         if (novoValor instanceof Cliente) {
             this._cliente = novoValor;
         }
     }
+    
+    //assessor
     get cliente(){
         return this._cliente;
     }
     
-    //atributo privado "#nameExample";
-    _saldo = 0;
+    constructor(agencia, cliente){
+        this.agencia = agencia;
+        this.cliente = cliente;
+    }
     
     //Métodos (funções)
     sacar(valor) {
-        if (this._saldo >= valor) {
-            this._saldo -= valor;
+        if (this.#saldo >= valor) {
+            this.#saldo -= valor;
             return valor;
         }
     }
@@ -28,8 +34,8 @@ export class ContaCorrente {
             //early return
             return;
         }
-        this._saldo += valor;
-        console.log(this._saldo)
+        this.#saldo += valor;
+        console.log(this.#saldo)
     }
 
     transferir(valor, conta) {
